@@ -13,5 +13,4 @@ public class BooksPage extends PageBase {
     @FindBy(id="book_categories")
     public WebElement selectBookCategories;
 
-
 }
