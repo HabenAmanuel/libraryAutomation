@@ -1,5 +1,5 @@
 Feature: Default values of the table
-
+@wip
   Scenario: Table columns names
 
     Given the user on the homepage
