@@ -8,7 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    WebDriver driver =Driver.getDriver();
+    WebDriver driver = Driver.getDriver();
+
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -29,15 +30,17 @@ public class LoginPage {
         signInButton.click();
 
     }
+
     public void loginAsLibrary() {
         driver.get(ConfigurationReader.getProperty("url"));
         String username = ConfigurationReader.getProperty("libUserName");
         String password = ConfigurationReader.getProperty("libPassword");
         usernameInput.sendKeys(username);
-       passwordInput.sendKeys(password);
-       signInButton.click();
+        passwordInput.sendKeys(password);
+        signInButton.click();
 
     }
+
     public void loginAsStudent() {
         driver.get(ConfigurationReader.getProperty("url"));
         String username = ConfigurationReader.getProperty("stuUserName11");
