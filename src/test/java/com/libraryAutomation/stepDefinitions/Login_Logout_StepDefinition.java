@@ -19,6 +19,8 @@ public class Login_Logout_StepDefinition extends PageBase {
     LandingPage landingPage = new LandingPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
+    //Student login verification
+
     @Given("the student login with {string} and {string}")
     public void the_student_login_with_and(String userName, String passWord) {
         loginPage.usernameInput.sendKeys(ConfigurationReader.getProperty(userName));
@@ -26,18 +28,16 @@ public class Login_Logout_StepDefinition extends PageBase {
         loginPage.signInButton.click();
     }
 
-
+// Verify the Books is in the Student url
     @Given("books is student in the student page")
     public void books_is_student_in_the_student_page() {
-        //BrowserUtils.sleep(3);
-        //  booksPageLink.isDisplayed();
         wait.until(ExpectedConditions.urlContains("books"));
         String expectedUrl = "http://library2.cybertekschool.com/#books";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.equals(expectedUrl));
 
     }
-
+//Librarian login verification
     @Given("the librarian login with {string} and {string}")
     public void the_librarian_login_with_and(String userName, String passWord) {
         loginPage.usernameInput.sendKeys(userName);
@@ -45,24 +45,21 @@ public class Login_Logout_StepDefinition extends PageBase {
         loginPage.signInButton.click();
     }
 
+// Verify the Dashboard is in the librarian url
 
     @Given("user should see the Dashboard  in the  page")
     public void user_should_see_the_dashboard_in_the_page() {
         wait.until(ExpectedConditions.urlContains("dashboard"));
-        // BrowserUtils.sleep(3);
-        //  dashboardPageLink.isDisplayed();
         String expectedUrl = "http://library2.cybertekschool.com/#dashboard";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.equals(expectedUrl));
     }
 
 
-
+// Logout verification
 
     @Given("the user login with {string} and {string}")
     public void theUserLoginWithAnd(String useName, String passWord) {
-
-
         loginPage.usernameInput.sendKeys(useName);
         loginPage.passwordInput.sendKeys(passWord);
         loginPage.signInButton.click();
@@ -83,7 +80,7 @@ public class Login_Logout_StepDefinition extends PageBase {
         String expectedUrl = "http://library2.cybertekschool.com/login.html";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
-        
+
     }
 
 

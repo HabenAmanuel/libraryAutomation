@@ -1,11 +1,8 @@
 Feature: 
 
-	#*Given* the student login with "<username>" and "<password>"
-	# *Given* the librarian login with "<username>" and "<password>"
-	# *Then* user should be able to logout
+
   @G23-109
   Scenario Outline: user should be able to logout
-   ## Given the student login with "<username>" and "<password>"
     Given the user login with "<username>" and "<password>"
     When user click the logout button
     Then user should be able to logout
