@@ -1,15 +1,13 @@
+@1
 Feature:Login to the Library page funtionality
+
 
   Background: User already on login page
 
-@Student
+  @Student
   Scenario Outline: Verify students login
     Given the student login with "<username>" and "<password>"
-  ## Then the "<expectedUser>" on "<expectedPage>"
-  And books is student in the student page
-
-
-
+    And books is student in the student page
 
 
     Examples:
@@ -20,12 +18,18 @@ Feature:Login to the Library page funtionality
 
 
   @librarian
-Scenario Outline: Verify librarian login
-  Given the librarin login with "<username>" and "<password>"
-  And  user should see the Dashboard  in the  page
+  Scenario Outline: Verify librarian login
+    Given the librarian login with "<username>" and "<password>"
+    And  user should see the Dashboard  in the  page
 
 
 
-  Examples:
-    | username      | password      |
-    | libUserName | libPassword |
+    Examples:
+      | username            | password |
+      | librarian50@library | kAbC7Ybl |
+      | librarian18@library | rKG2sP88 |
+      | librarian43@library | np6AxVIh |
+      | librarian50@library | kAbC7Ybl |
+
+
+

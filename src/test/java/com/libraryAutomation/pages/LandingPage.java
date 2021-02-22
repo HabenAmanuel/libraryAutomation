@@ -21,4 +21,7 @@ public class LandingPage extends PageBase{
     public WebElement userIDName;
 
 
+    @FindBy(xpath = "//*[@id='navbarDropdown']")
+    public WebElement logoutDropdown;
+
 }
